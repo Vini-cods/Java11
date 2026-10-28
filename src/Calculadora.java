@@ -36,12 +36,32 @@ public class Calculadora {
         System.out.println("5 - Resto da divisão");
         System.out.println("Escolha uma opção");
 
+        if (!scanner.hasNextInt()) {
+            System.out.println("Opção inválida!!");
+            scanner.close();
+            return;
+        }
         int opcao = scanner.nextInt();
+        if (opcao < 1 || opcao > 5) {
+            System.out.println("Opção inválida!!");
+            scanner.close();
+            return;
+        }
 
         System.out.println("Digite o primeiro número");
+        if (!scanner.hasNextDouble()) {
+            System.out.println("Número inválido!");
+            scanner.close();
+            return;
+        }
         double num1 = scanner.nextDouble();
 
         System.out.println("Digite o segundo número");
+        if (!scanner.hasNextDouble()) {
+            System.out.println("Número inválido!");
+            scanner.close();
+            return;
+        }
         double num2 = scanner.nextDouble();
 
         switch (opcao) {
